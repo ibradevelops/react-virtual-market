@@ -1,3 +1,6 @@
+Not supported on smaller devices
+Live version: https://react-virtual-market.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
