@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;900&display=swap");
+
+/* 
+font-family: 'Montserrat', sans-serif;
+*/
+
+:root {
+  --dark: #2c3333;
+  --light: #fffaf0;
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+
+.dark-mode {
+  background-color: var(--dark) !important;
+  color: var(--light) !important;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  overflow-y: hidden;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.app__sub-header {
+  padding-block: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.toggle__btn {
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+  border: 3px solid gray;
+  transition: all 0.3s;
+  border-radius: 0.6rem;
+}
+
+.toggle__btn:hover,
+.toggle__btn:active {
+  transform: scale(1.1) translateY(-0.4rem);
+}
+
+.app__title {
+  font-weight: 300;
+  font-size: 7.2rem;
+  letter-spacing: 1px;
+}
+
+.app__date {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.app__sub-title-header {
+  text-align: center;
+}
+
+.app__sub-title {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-transform: capitalize;
+}
+
+.app__sub-title::before {
+  content: "";
+  position: relative;
+  top: -1.05rem;
+  left: 3rem;
+  display: inline-block;
+  background-color: gray;
+  height: 0.15rem;
+  width: 8rem;
+}
+
+.app__sub-title::after {
+  content: "";
+  position: relative;
+  top: -1.05rem;
+  right: 3rem;
+  display: inline-block;
+  background-color: gray;
+  height: 0.15rem;
+  width: 8rem;
+}
+
+.app__sub-title:hover,
+.app__sub-title:active {
+  transform: skewX(18deg) skewY(2deg);
+  text-shadow: 0 0.6rem 1rem var(--dark);
+}
+
+/* Adding Items Section */
+
+.app__main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+  margin-top: 8rem;
+  padding: 2rem 6rem;
+}
+
+.app__adding-items-section * {
+  min-width: 100%;
+}
+
+.app__adding-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-bottom: 1rem;
+}
+
+.app__adding-items input,
+.app__adding-items select,
+.app__adding-items button,
+.app__adding-items select > option,
+.app__adding-items-section p {
+  font-size: 2.2rem;
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 0.2rem 0.4rem;
+}
+
+.app__adding-items-section p {
+  border: none;
+  padding: none;
+}
+.app__adding-items select {
+  margin-bottom: 1rem;
+}
+
+.app__adding-items select > option {
+  color: black;
+}
+
+/* Items List */
+
+.app__items-list {
+  list-style: none;
+  justify-self: center;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  overflow: auto;
+  height: 40.5rem;
+  border: 3px solid grey;
+  padding-block: 1rem;
+}
+
+.items__single-list {
+  border-bottom: 0.2rem solid grey;
+  padding-bottom: 2rem;
+  margin-inline: 8rem;
+}
+
+.items__single-list > div {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.items__single-list > div:not(:last-child) {
+  margin-bottom: 1.4rem;
+}
+
+.items__single-list > div * {
+  font-size: 2.4rem;
+  color: inherit;
+  background-color: inherit;
+}
+.items__single-list > div span {
+  margin-bottom: 1rem;
+}
+
+.items__single-list--btn-dec,
+.items__single-list--btn-inc {
+  padding: 0.4rem 0.8rem;
+  /* cursor: pointer; */
+}
+.items__single-list--quantity {
+  width: 10%;
+  outline: none;
+  text-align: center;
+}
+
+.items__single-list span {
+  display: flex;
+  gap: 3rem;
+}
+
+.item-btn {
+  padding: 0.2rem 0.4rem;
+  border: 2px solid inherit;
+  transition: all 0.3s ease;
+}
+
+.item-btn:enabled:hover,
+.item-btn:enabled:active {
+  cursor: pointer;
+  background-color: gray;
+  color: var(--light);
+}
+
+.adding__items-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adding__items-btn:hover,
+.adding__items-btn:active {
+  box-shadow: 0 1rem 4rem var(--dark);
+  transform: scale(1.05);
+}
+
+.no__items-msg {
+  font-size: 2.6rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+}
+
+/* Items Calculation Section */
+
+.app__items-calculation {
+  display: flex;
+  flex-direction: column;
+  gap: 3.66rem;
+}
+
+.app__items-calculation h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+}
+
+.delete-all-btn,
+.sorting-btn,
+.app__sorting-fragment select {
+  font-size: 2.2rem;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: inherit;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+  backface-visibility: hidden;
+}
+.app__sorting-fragment select {
+  margin-bottom: 1rem;
+}
+
+.app__sorting-fragment select option {
+  color: black;
+}
+
+.delete-all-btn:hover,
+.delete-all-btn:active,
+.sorting-btn:hover,
+.sorting-btn:active {
+  cursor: pointer;
+  box-shadow: 0 1rem 4rem var(--dark);
+  transform: scale(1.05);
+}
+
+.item-done-line {
+  text-decoration: line-through;
+}
+
+.item-done-opacity {
+  opacity: 0.5;
+}
+
+/* Error Msg */
+
+.err_msg {
+  color: red !important;
+  font-weight: 500 !important;
+}
