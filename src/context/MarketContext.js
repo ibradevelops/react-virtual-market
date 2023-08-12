@@ -12,7 +12,7 @@ function MarketProvider({ children }) {
   const initialState = {
     /*
     if there are items in the local storage, it will take them as 
-    innitial array, otherwise, it will take an empty array
+    initial array, otherwise, it will take an empty array
     */
     items: JSON.parse(localStorage.getItem("reactVirtualMarket")) || [],
     nameQuery: "",
